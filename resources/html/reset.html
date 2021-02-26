@@ -1,0 +1,34 @@
+{% extends "auth.html" %}
+{% block form %}
+<form method="POST" action="/reset" class="box">
+    {% csrf-field %}
+    <label class="label is-medium has-text-centered">Forgot Password</label>
+    <div class="field">
+        <label for="email" class="label">Email</label>
+        <div class="control has-icons-left">
+            <input type="text" name="email" placeholder="e.g.bobcatgoldthwait@gmail.com"
+                class="input {% if errors.email %} is-danger {% endif %}" value="{% if email %}{{email}}{% endif %}" />
+            <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+            </span>
+        </div>
+        {% if errors.email %}
+        <p class="help is-danger">{{errors.email}}</p>
+        {% endif %}
+
+    </div>
+    {% if messages.success %}
+    <p class="has-text-success level-item has-text-centered">{{messages.success}}</p>
+
+    {% else %}
+    <div class="field">
+        <button class="button is-success" style="width: 100%">
+            Send Password Reset Email
+        </button>
+    </div>
+    {% endif %}
+    <div class="field has-text-centered">
+        <span>Remember Password?<a href="/login"> Login</a></span>
+    </div>
+</form>
+{% endblock %}

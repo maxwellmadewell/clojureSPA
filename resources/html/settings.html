@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post App</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- scripts and styles -->
+    {% style "/assets/bulma/css/bulma.min.css" %}
+    {% style "/assets/material-icons/css/material-icons.min.css" %}
+    {% style "/css/screen.css" %}
+<br/>
+TO BE IMPLEMENTED
+<span><a href="/"> Go to Posts</a></span>
+    <script type="text/javascript">
+        var csrfToken = '{{csrf-token}}';
+    </script>
+    {% script "/js/settings.js" %}
+</body>
+
+</html>
